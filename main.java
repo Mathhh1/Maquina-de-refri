@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
@@ -22,7 +21,6 @@ public class main {
                 opcao = sc.nextLine();
             }
 
-            ArrayList<Double> moedas = new ArrayList<>();
             double saldo = 0;
             boolean entregue = false;
 
@@ -32,12 +30,7 @@ public class main {
                 while (outraMoeda.equalsIgnoreCase("sim")) {
                     System.out.print("Valor da moeda: R$ ");
                     double valor = Double.parseDouble(sc.nextLine().replace(",", "."));
-                    moedas.add(valor);
-
-                    saldo = 0;
-                    for (double moeda : moedas) {
-                        saldo += moeda;
-                    }
+                    saldo += valor;
 
                     System.out.printf("Saldo total: R$ %.2f%n", saldo);
                     System.out.print("Deseja digitar outra moeda? (sim/não): ");
